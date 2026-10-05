@@ -45,13 +45,13 @@ xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack -sdk iphonesimul
 
 ## 验证范围与发布准备
 
-在 Windows 上完成了内容映射核对和工程引用检查，未执行 Xcode 编译或 iOS 模拟器视觉验证。请在 Mac 上完成编译和设备验证后使用。
+在 Windows 上完成内容映射核对和工程引用检查。v1.1 已通过 GitHub Mac 环境上的存储自动测试与 Xcode 26.6 真机 Release 编译；新版手机交互与模拟器视觉验收尚待完成。
 
 验收建议：逐组切换与重量输入后重启 App；检查七天动作；确认可选组不影响必做完成度；测试计时暂停/后台恢复；导出并核对 JSON；重置本周后检查历史记录。
 
 浏览器 LocalStorage 中既有勾选状态不包含在 HTML 文件里，因此没有迁移浏览器旧记录。v1.1 已加入原网页四张动机图片。App 不联网、不请求健康数据，不含账号、云同步或 HealthKit。相册选择器只提供用户选中的图片；没有整库访问权限。删除 App 会同时删除本地记录和自选图片，覆盖升级请保留原 App。
 
-提交 App Store 前还需配置正式签名、App 图标、商店资料，并验证发布要求。当前交付物是源代码工程，不是 IPA。
+源代码工程保留用于后续更新；v1.1 未签名 IPA 已由 GitHub 构建生成，可用原签名工具签名后自用安装。
 
 ## 后续验证
 
@@ -59,4 +59,6 @@ xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack -sdk iphonesimul
 
 ## v1.1 覆盖更新
 
-训练记录模型、数据键及 Bundle ID 保持原样。通过 GitHub 的 `Build iPhone IPA` 工作流生成新版 IPA，然后使用原来的签名账户、签名工具和实际安装 Bundle ID 覆盖更新。详细操作见 `更新说明.md`。新版完整 Xcode 构建与手机测试仍待执行；Windows 本地检查不是 iOS 编译通过的证明。
+训练记录模型、数据键及 Bundle ID 保持原样。后续训练代码更新会自动触发 GitHub 的 `Build iPhone IPA` 工作流。使用原来的签名账户、签名工具和实际安装 Bundle ID 覆盖更新。详细操作见 `更新说明.md`。
+
+[v1.1 成功的构建](https://github.com/LionChain123/Traing/actions/runs/37290903203) · [下载 IPA](https://github.com/LionChain123/Traing/actions/runs/37290903203/artifacts/11336755740)。完整 Xcode 构建和存储测试已通过，手机交互验收仍待完成。
