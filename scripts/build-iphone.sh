@@ -7,7 +7,7 @@ mkdir -p build
 swiftc ShoulderBack/MotivationLibrary.swift tests/MotivationLibraryTests.swift -o build/MotivationLibraryTests
 build/MotivationLibraryTests 2>&1 | tee artifacts/motivation-tests.log
 
-# Sideloadly on Windows signs this device build with the user's Apple account.
+# iLoader on Windows signs this device build with the user's Apple account.
 # No Apple credentials or signing certificates are sent to GitHub.
 xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack \
   -configuration Release -sdk iphoneos \
@@ -21,6 +21,21 @@ test -f "$app/ShoulderBack"
 test -f "$app/Plan.json"
 test -f "$app/Assets.car"
 /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app/Info.plist"
+python3 - "$app" <<'PY'
+import pathlib, plistlib
+app = pathlib.Path(__import__('sys').argv[1])
+info = plistlib.loads((app / 'Info.plist').read_bytes())
+assert info['CFBundleDisplayName'] == '训练', info
+assert info['CFBundleIdentifier'] == 'com.example.ShoulderBack', info
+assert info['CFBundleShortVersionString'] == '1.1.1', info
+assert info['CFBundleVersion'] == '3', info
+primary = info['CFBundleIcons']['CFBundlePrimaryIcon']
+assert primary['CFBundleIconName'] == 'AppIcon', primary
+assert primary['CFBundleIconFiles'], primary
+for icon in primary['CFBundleIconFiles']:
+    assert list(app.glob(icon + '*.png')), icon
+print('PASS: app name, version, bundle ID and packaged AppIcon')
+PY
 lipo -archs "$app/ShoulderBack" | grep -q arm64
 
 # mktemp keeps repeated local runs isolated without deleting existing data.
@@ -30,4 +45,4 @@ ditto "$app" "$stage/Payload/ShoulderBack.app"
 ipa="$PWD/artifacts/ShoulderBack-unsigned.ipa"
 (cd "$stage" && zip -qry "$ipa" Payload)
 unzip -t "$ipa"
-echo "IPA created: $ipa (unsigned; sign with Sideloadly before installation)"
+echo "IPA created: $ipa (unsigned; sign with iLoader before installation)"

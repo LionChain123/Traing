@@ -50,7 +50,7 @@ struct TodayView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
-                    Label("肩背优先", systemImage: "figure.strengthtraining.traditional")
+                    Label("训练", systemImage: "figure.strengthtraining.traditional")
                         .font(.subheadline.weight(.bold)).foregroundStyle(Palette.lime)
                     Spacer()
                     Text(Date(), format: .dateTime.month().day()).foregroundStyle(.secondary)
