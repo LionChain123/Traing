@@ -26,6 +26,10 @@ xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack -sdk iphonesimul
 - 休息计时：60 / 90 / 120 秒，可暂停、重置；根据截止时间校正后台经过的时间。关闭计时页面即结束，不发送后台通知。
 - 重置本周：原生确认弹窗，历史周记录保留。
 - 深色界面、SF Symbols、原生导航与标签栏、iPad 宽度适配。
+- 训练动机墙：原网页四张图、标题与说明离线内置；今日页预览、独立动机页。
+- 手动添加：从相册选择图片，填写标题与说明；轻点编辑、换图，管理页调整排序或确认删除。
+- 动机数据：图片保存到 App 内的私有目录，退出后保留；删除相册原图不会影响已保存的副本。清空动机墙后重启不会恢复默认图片。
+- 诗句：今日页与动机页展示中英文标题、两行英文诗句和中文译文。
 
 ## 文件
 
@@ -33,6 +37,11 @@ xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack -sdk iphonesimul
 - `Models.swift`：计划模型、周记录、持久化。
 - `Views.swift`：今日、计划、动作、历史、执行原则与计时页面。
 - `Plan.json`：由源网页提取的训练内容，直接打包进 App。
+- `MotivationLibrary.swift`：动机卡片元数据、图片副本与原子保存。
+- `MotivationStore.swift`：相册图片处理与界面状态。
+- `MotivationViews.swift`：动机墙、添加/编辑/排序页面与诗句。
+- `Assets.xcassets`：原网页四张动机图片。
+- `tests/MotivationLibraryTests.swift`：Mac 构建前执行的动机数据持久化与失败恢复测试。
 
 ## 验证范围与发布准备
 
@@ -40,10 +49,14 @@ xcodebuild -project ShoulderBack.xcodeproj -scheme ShoulderBack -sdk iphonesimul
 
 验收建议：逐组切换与重量输入后重启 App；检查七天动作；确认可选组不影响必做完成度；测试计时暂停/后台恢复；导出并核对 JSON；重置本周后检查历史记录。
 
-浏览器 LocalStorage 中既有勾选状态不包含在 HTML 文件里，因此没有迁移浏览器旧记录。原网页训练图片没有打包，原生视觉改用字体、进度环和系统符号。App 不联网、不请求健康数据，不含账号、云同步或 HealthKit。
+浏览器 LocalStorage 中既有勾选状态不包含在 HTML 文件里，因此没有迁移浏览器旧记录。v1.1 已加入原网页四张动机图片。App 不联网、不请求健康数据，不含账号、云同步或 HealthKit。相册选择器只提供用户选中的图片；没有整库访问权限。删除 App 会同时删除本地记录和自选图片，覆盖升级请保留原 App。
 
 提交 App Store 前还需配置正式签名、App 图标、商店资料，并验证发布要求。当前交付物是源代码工程，不是 IPA。
 
 ## 后续验证
 
 已修复存储错误提示、损坏数据备份和计时暂停。详细结果见 `验证报告.md`。在 Mac 上运行 `bash verify-on-mac.sh` 可执行完整模拟器目标构建，日志保存至 `verification/build.log`。
+
+## v1.1 覆盖更新
+
+训练记录模型、数据键及 Bundle ID 保持原样。通过 GitHub 的 `Build iPhone IPA` 工作流生成新版 IPA，然后使用原来的签名账户、签名工具和实际安装 Bundle ID 覆盖更新。详细操作见 `更新说明.md`。新版完整 Xcode 构建与手机测试仍待执行；Windows 本地检查不是 iOS 编译通过的证明。

@@ -3,9 +3,10 @@ import SwiftUI
 @main
 struct ShoulderBackApp: App {
     @StateObject private var store = TrainingStore()
+    @StateObject private var wall = MotivationStore()
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(store).tint(Palette.lime)
+            RootView().environmentObject(store).environmentObject(wall).tint(Palette.lime)
                 .preferredColorScheme(.dark)
         }
     }

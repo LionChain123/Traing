@@ -13,6 +13,8 @@ struct RootView: View {
                 .tabItem { Label("今日", systemImage: "flame.fill") }
             NavigationStack { WeekView() }
                 .tabItem { Label("计划", systemImage: "calendar") }
+            NavigationStack { MotivationWallView() }
+                .tabItem { Label("动机", systemImage: "photo.on.rectangle.angled") }
             NavigationStack { HistoryView() }
                 .tabItem { Label("记录", systemImage: "chart.bar.xaxis") }
         }
@@ -91,12 +93,8 @@ struct TodayView: View {
                     Metric(value: "3", label: "有氧恢复 / 周")
                     Metric(value: "1–3", label: "目标 RIR")
                 }
-                VStack(alignment: .leading, spacing: 10) {
-                    Image(systemName: "sparkle").foregroundStyle(Palette.lime)
-                    Text("不要温和地走进那个良夜。").font(.headline)
-                    Text("肩更宽，背更厚。训练、饮食、恢复，缺一不可。")
-                        .font(.subheadline).foregroundStyle(.secondary)
-                }.trainingCard()
+                PoemCard()
+                MotivationPreview()
             }.padding(20).frame(maxWidth: 720)
                 .frame(maxWidth: .infinity)
         }.background(Palette.background).navigationTitle("今日")
@@ -391,6 +389,7 @@ struct RestTimerView: View {
 
 struct AppPreview: PreviewProvider {
     static var previews: some View {
-        RootView().environmentObject(TrainingStore()).preferredColorScheme(.dark).tint(Palette.lime)
+        RootView().environmentObject(TrainingStore()).environmentObject(MotivationStore())
+            .preferredColorScheme(.dark).tint(Palette.lime)
     }
 }
