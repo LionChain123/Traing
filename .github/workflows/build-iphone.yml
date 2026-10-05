@@ -1,0 +1,31 @@
+name: Build iPhone IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build iPhone app
+        run: bash scripts/build-iphone.sh
+
+      - name: Save IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShoulderBack-iPhone-IPA
+          path: artifacts/ShoulderBack-unsigned.ipa
+          if-no-files-found: error
+
+      - name: Save logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Xcode-build-logs
+          path: artifacts/*.log
