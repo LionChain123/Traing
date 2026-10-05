@@ -1,0 +1,434 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "name": "周一",
+      "focus": "背部主日 · 后束 · 二头",
+      "kind": "力量",
+      "note": "",
+      "exercises": [
+        {
+          "id": "m-pullup",
+          "name": "引体向上",
+          "detail": "背宽主力，能轻松做 10 次后考虑负重",
+          "prescription": "4 × 6–10",
+          "setKeys": [
+            "m-pullup-set1",
+            "m-pullup-set2",
+            "m-pullup-set3",
+            "m-pullup-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "m-row1",
+          "name": "单臂哑铃划船",
+          "detail": "肘向后下方拉，控制离心",
+          "prescription": "4 × 8–12",
+          "setKeys": [
+            "m-row1-set1",
+            "m-row1-set2",
+            "m-row1-set3",
+            "m-row1-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "m-row2",
+          "name": "双手哑铃划船",
+          "detail": "上背与背阔肌补量",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "m-row2-set1",
+            "m-row2-set2",
+            "m-row2-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "m-reardelt",
+          "name": "哑铃俯身飞鸟",
+          "detail": "后束优先，重量不用过大",
+          "prescription": "3 × 12–20",
+          "setKeys": [
+            "m-reardelt-set1",
+            "m-reardelt-set2",
+            "m-reardelt-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "m-curl",
+          "name": "哑铃弯举",
+          "detail": "保持肘部稳定",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "m-curl-set1",
+            "m-curl-set2",
+            "m-curl-set3"
+          ],
+          "optionalKeys": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "周二",
+      "focus": "胸 · 肩中束 · 三头",
+      "kind": "力量",
+      "note": "不安排前平举：卧推、上斜卧推、双杠和推肩已经给前三角大量刺激。",
+      "exercises": [
+        {
+          "id": "t-bench",
+          "name": "杠铃卧推",
+          "detail": "主复合动作，优先保证力量输出",
+          "prescription": "4 × 6–10",
+          "setKeys": [
+            "t-bench-set1",
+            "t-bench-set2",
+            "t-bench-set3",
+            "t-bench-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "t-incline",
+          "name": "上斜卧推",
+          "detail": "上胸为主",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "t-incline-set1",
+            "t-incline-set2",
+            "t-incline-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "t-dips",
+          "name": "双杠臂屈伸",
+          "detail": "胸与三头补量",
+          "prescription": "2–3 × 8–12",
+          "setKeys": [
+            "t-dips-set1",
+            "t-dips-set2",
+            "t-dips-set3"
+          ],
+          "optionalKeys": [
+            "t-dips-set3"
+          ]
+        },
+        {
+          "id": "t-lateral",
+          "name": "哑铃侧平举",
+          "detail": "肩宽重点动作，中束优先",
+          "prescription": "4 × 12–20",
+          "setKeys": [
+            "t-lateral-set1",
+            "t-lateral-set2",
+            "t-lateral-set3",
+            "t-lateral-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "t-triceps",
+          "name": "三头孤立动作",
+          "detail": "例如哑铃臂屈伸",
+          "prescription": "3 × 10–15",
+          "setKeys": [
+            "t-triceps-set1",
+            "t-triceps-set2",
+            "t-triceps-set3"
+          ],
+          "optionalKeys": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "周三",
+      "focus": "非力量日 · 空腹有氧 · 腹部 · 恢复",
+      "kind": "有氧恢复",
+      "note": "",
+      "exercises": [
+        {
+          "id": "w-cardio",
+          "name": "空腹低强度有氧",
+          "detail": "保持可持续强度，不追求跑到力竭",
+          "prescription": "35–45 min",
+          "setKeys": [
+            "w-cardio-done"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "w-abs",
+          "name": "负重卷腹",
+          "detail": "有氧后完成，控制离心并逐步增加负重或次数",
+          "prescription": "3 × 10–15",
+          "setKeys": [
+            "w-abs-set1",
+            "w-abs-set2",
+            "w-abs-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "w-walk",
+          "name": "轻松散步 / 拉伸",
+          "detail": "可选，促进恢复",
+          "prescription": "可选",
+          "setKeys": [
+            "w-walk-done"
+          ],
+          "optionalKeys": [
+            "w-walk-done"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "周四",
+      "focus": "腿 · 背部补量",
+      "kind": "力量",
+      "note": "腿日不再额外安排有氧，优先保证下肢恢复与周六肩部训练状态。",
+      "exercises": [
+        {
+          "id": "th-squat",
+          "name": "深蹲",
+          "detail": "腿部主力动作",
+          "prescription": "4 × 6–10",
+          "setKeys": [
+            "th-squat-set1",
+            "th-squat-set2",
+            "th-squat-set3",
+            "th-squat-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "th-rdl",
+          "name": "罗马尼亚硬拉",
+          "detail": "腘绳肌、臀部、后链",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "th-rdl-set1",
+            "th-rdl-set2",
+            "th-rdl-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "th-bulgarian",
+          "name": "保加利亚分腿蹲",
+          "detail": "单侧腿部稳定与补量",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "th-bulgarian-set1",
+            "th-bulgarian-set2",
+            "th-bulgarian-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "th-pullup",
+          "name": "引体向上",
+          "detail": "第二次背部刺激，可换握法",
+          "prescription": "3 × 6–10",
+          "setKeys": [
+            "th-pullup-set1",
+            "th-pullup-set2",
+            "th-pullup-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "th-row",
+          "name": "哑铃划船",
+          "detail": "补充背部厚度",
+          "prescription": "3 × 10–15",
+          "setKeys": [
+            "th-row-set1",
+            "th-row-set2",
+            "th-row-set3"
+          ],
+          "optionalKeys": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "周五",
+      "focus": "非力量日 · 空腹有氧 · 腹部 · 恢复",
+      "kind": "有氧恢复",
+      "note": "",
+      "exercises": [
+        {
+          "id": "f-cardio",
+          "name": "空腹低强度有氧",
+          "detail": "坡走 / 单车 / 椭圆机",
+          "prescription": "35–45 min",
+          "setKeys": [
+            "f-cardio-done"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "f-abs",
+          "name": "负重卷腹",
+          "detail": "有氧后完成，保持腹部主动收缩",
+          "prescription": "3 × 10–15",
+          "setKeys": [
+            "f-abs-set1",
+            "f-abs-set2",
+            "f-abs-set3"
+          ],
+          "optionalKeys": []
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "周六",
+      "focus": "肩部主日 · 手臂",
+      "kind": "力量",
+      "note": "腹部训练已统一移到有氧日，周六专注完成肩部和手臂训练。",
+      "exercises": [
+        {
+          "id": "s-press",
+          "name": "哑铃推肩",
+          "detail": "放在最前，优先保证力量与稳定",
+          "prescription": "4 × 6–10",
+          "setKeys": [
+            "s-press-set1",
+            "s-press-set2",
+            "s-press-set3",
+            "s-press-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "s-lateral",
+          "name": "哑铃侧平举",
+          "detail": "肩宽重点，高质量完成",
+          "prescription": "5 × 12–20",
+          "setKeys": [
+            "s-lateral-set1",
+            "s-lateral-set2",
+            "s-lateral-set3",
+            "s-lateral-set4",
+            "s-lateral-set5"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "s-reardelt",
+          "name": "哑铃俯身飞鸟",
+          "detail": "后束与肩部立体感",
+          "prescription": "4 × 12–20",
+          "setKeys": [
+            "s-reardelt-set1",
+            "s-reardelt-set2",
+            "s-reardelt-set3",
+            "s-reardelt-set4"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "s-curl",
+          "name": "哑铃弯举",
+          "detail": "二头孤立训练",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "s-curl-set1",
+            "s-curl-set2",
+            "s-curl-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "s-triceps",
+          "name": "三头训练",
+          "detail": "动作自选，保持肘部稳定",
+          "prescription": "3 × 8–12",
+          "setKeys": [
+            "s-triceps-set1",
+            "s-triceps-set2",
+            "s-triceps-set3"
+          ],
+          "optionalKeys": []
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "name": "周日",
+      "focus": "非力量日 · 空腹有氧 · 腹部 · 恢复",
+      "kind": "有氧恢复",
+      "note": "周日作为第三个空腹有氧与腹部训练日；如果疲劳明显，可缩短有氧时长，但腹部训练仍以动作质量优先。",
+      "exercises": [
+        {
+          "id": "su-cardio",
+          "name": "空腹低强度有氧",
+          "detail": "坡走 / 单车 / 椭圆机，保持轻中等强度",
+          "prescription": "30–40 min",
+          "setKeys": [
+            "su-cardio-done"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "su-abs",
+          "name": "负重卷腹",
+          "detail": "有氧后完成，动作稳定，不借惯性",
+          "prescription": "3 × 10–15",
+          "setKeys": [
+            "su-abs-set1",
+            "su-abs-set2",
+            "su-abs-set3"
+          ],
+          "optionalKeys": []
+        },
+        {
+          "id": "su-recovery",
+          "name": "轻松散步 / 拉伸",
+          "detail": "可选，不安排正式力量训练",
+          "prescription": "可选",
+          "setKeys": [
+            "su-recovery-done"
+          ],
+          "optionalKeys": [
+            "su-recovery-done"
+          ]
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "title": "01 · RIR 1–3",
+      "body": "大部分工作组结束时保留约 1–3 次余力。复合动作不必每组都做到完全力竭。"
+    },
+    {
+      "title": "02 · 渐进超负荷",
+      "body": "当你在目标次数上限仍能保持动作质量，并明显有余力时，下次训练小幅增加重量。"
+    },
+    {
+      "title": "03 · 有氧低干扰",
+      "body": "空腹有氧和腹部训练全部放在周三、周五、周日三个非力量训练日；建议先完成有氧，再进行负重卷腹。 空腹本身不是减脂魔法 ，核心仍是总热量平衡与长期执行。"
+    },
+    {
+      "title": "04 · 肩背优先",
+      "body": "训练资源优先给中束、后束、背阔肌和上背；前平举暂时不需要单独安排。"
+    },
+    {
+      "title": "05 · 恢复监控",
+      "body": "如果连续两周引体、划船、推肩表现下降，并伴随明显疲劳，优先减少补量或有氧，而不是继续加练。"
+    },
+    {
+      "title": "06 · 训练记录",
+      "body": "至少记录引体、划船、卧推、深蹲、推肩的重量与次数。真正的进步应能在训练日志里看到。"
+    }
+  ]
+}
